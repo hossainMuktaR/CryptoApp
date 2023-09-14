@@ -20,6 +20,8 @@ kotlinx-coroutines-core = "1.7.3"
 kotlin-ksp = "1.9.0-1.0.13"
 hilt-lifecycle-viewmodel = "1.0.0-alpha03"
 sql-delight = "2.0.0"
+retrofit = "2.9.0"
+okhttp = "4.10.0"
 
 
 [libraries]
@@ -52,6 +54,12 @@ kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-c
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines-core" }
 cash-sqldelight-android-driver = { module = "app.cash.sqldelight:android-driver", version.ref = "sql-delight" }
 cash-sqldelight-coRx = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sql-delight" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+okhttp3 = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+okhttp3-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
+
+
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "agp" }
