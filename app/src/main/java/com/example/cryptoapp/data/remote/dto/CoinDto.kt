@@ -1,14 +1,16 @@
 package com.example.cryptoapp.data.remote.dto
 
 
-import com.google.gson.annotations.SerializedName
 import com.example.cryptoapp.domain.model.Coin
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class CoinDto(
     val id: String,
-    @SerializedName("is_active")
+    @SerialName("is_active")
     val isActive: Boolean,
-    @SerializedName("is_new")
+    @SerialName("is_new")
     val isNew: Boolean,
     val name: String,
     val rank: Int,

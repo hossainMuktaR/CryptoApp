@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.org.jetbrains.kotlin.android)
 
     alias(libs.plugins.com.google.dagger.hilt.android)
+    alias(libs.plugins.kotlin.serialization)
     id(libs.plugins.google.devtools.ksp.get().pluginId)
 }
 
@@ -49,6 +50,7 @@ android {
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "META-INF/INDEX.LIST"
         }
     }
 }
@@ -84,14 +86,17 @@ dependencies {
     //    Compose dependencies
     implementation(libs.lifecycle.viewmodel.compose)
     implementation(libs.navigation.compose)
-//    implementation(libs.material.icons.extended)
     implementation(libs.hilt.navigation.compose)
     implementation(libs.lifecycle.runtime.ktx)
 
-    // Retrofit
-    implementation(libs.retrofit)
-    implementation(libs.retrofit.converter.gson)
-    implementation(libs.okhttp3)
-    implementation(libs.okhttp3.logging.interceptor)
+    //ktor
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.android)
+//    implementation(libs.ktor.client.serialization)
+    implementation(libs.ktor.client.content.negotiation)
+    implementation(libs.ktor.client.logging)
+//    implementation(libs.ktor.logback.classic)
 
+    //kotlin-serialization-json
+    implementation(libs.ktor.serialization.json)
 }

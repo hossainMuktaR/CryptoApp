@@ -1,7 +1,8 @@
 package com.example.cryptoapp.data.remote.dto
 
+import kotlinx.serialization.Serializable
 
-
+@Serializable
 data class Stats(
     val contributors: Int,
     val followers: Int,
