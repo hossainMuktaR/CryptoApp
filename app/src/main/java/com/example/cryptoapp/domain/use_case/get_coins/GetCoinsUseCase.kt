@@ -1,18 +1,21 @@
 package com.example.cryptoapp.domain.use_case.get_coins
 
+import android.net.http.HttpException
+import android.os.Build
+import androidx.annotation.RequiresExtension
 import com.example.cryptoapp.common.Resource
 import com.example.cryptoapp.data.remote.dto.toCoin
 import com.example.cryptoapp.domain.model.Coin
 import com.example.cryptoapp.domain.repository.CoinRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
 
 class GetCoinsUseCase @Inject constructor(
     private val repository: CoinRepository
 ) {
+    @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
     operator fun invoke(): Flow<Resource<List<Coin>>> = flow {
         try {
             emit(Resource.Loading<List<Coin>>())
