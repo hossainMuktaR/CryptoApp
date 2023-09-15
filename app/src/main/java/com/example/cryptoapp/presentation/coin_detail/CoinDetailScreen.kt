@@ -20,6 +20,7 @@ import com.example.cryptoapp.presentation.coin_detail.CoinDetailViewModel
 import com.example.cryptoapp.presentation.coin_detail.components.CoinTag
 import com.example.cryptoapp.presentation.coin_detail.components.TeamListItem
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun CoinDetailScreen(
     viewModel: CoinDetailViewModel = hiltViewModel()
@@ -62,15 +63,15 @@ fun CoinDetailScreen(
                         style = MaterialTheme.typography.headlineLarge
                     )
                     Spacer(modifier = Modifier.height(15.dp))
-//                    FlowRow(
-//                        mainAxisSpacing = 10.dp,
-//                        crossAxisSpacing = 10.dp,
-//                        modifier = Modifier.fillMaxWidth()
-//                    ) {
-//                        coin.tags.forEach { tag ->
-//                            CoinTag(tag = tag)
-//                        }
-//                    }
+                    FlowRow(
+                        horizontalArrangement = Arrangement.spacedBy(10.dp, Alignment.Start),
+                        verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.Top),
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        coin.tags.forEach { tag ->
+                            CoinTag(tag = tag)
+                        }
+                    }
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
                         text = "Team members",
