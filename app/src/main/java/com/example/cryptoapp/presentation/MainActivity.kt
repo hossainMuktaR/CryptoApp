@@ -8,7 +8,7 @@ import androidx.compose.material3.Surface
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.plcoding.cryptocurrencyappyt.presentation.coin_detail.CoinDetailScreen
+import com.example.cryptoapp.presentation.coin_detail.CoinDetailScreen
 import com.example.cryptoapp.presentation.coin_list.CoinListScreen
 import com.example.cryptoapp.presentation.ui.theme.CryptoAppTheme
 import dagger.hilt.android.AndroidEntryPoint

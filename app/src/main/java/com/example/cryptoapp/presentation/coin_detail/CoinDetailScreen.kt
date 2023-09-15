@@ -1,5 +1,7 @@
-package com.plcoding.cryptocurrencyappyt.presentation.coin_detail
+package com.example.cryptoapp.presentation.coin_detail
 
+import android.os.Build
+import androidx.annotation.RequiresExtension
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -16,10 +18,11 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.cryptoapp.presentation.coin_detail.CoinDetailViewModel
 import com.example.cryptoapp.presentation.coin_detail.components.CoinTag
 import com.example.cryptoapp.presentation.coin_detail.components.TeamListItem
 
+@OptIn(ExperimentalLayoutApi::class)
+@RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
 @Composable
 fun CoinDetailScreen(
     viewModel: CoinDetailViewModel = hiltViewModel()
@@ -59,22 +62,22 @@ fun CoinDetailScreen(
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
                         text = "Tags",
-                        style = MaterialTheme.typography.headlineLarge
+                        style = MaterialTheme.typography.headlineMedium
                     )
                     Spacer(modifier = Modifier.height(15.dp))
-//                    FlowRow(
-//                        mainAxisSpacing = 10.dp,
-//                        crossAxisSpacing = 10.dp,
-//                        modifier = Modifier.fillMaxWidth()
-//                    ) {
-//                        coin.tags.forEach { tag ->
-//                            CoinTag(tag = tag)
-//                        }
-//                    }
+                    FlowRow(
+                        horizontalArrangement = Arrangement.spacedBy(10.dp, Alignment.Start),
+                        verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.Top),
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        coin.tags.forEach { tag ->
+                            CoinTag(tag = tag)
+                        }
+                    }
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
                         text = "Team members",
-                        style = MaterialTheme.typography.headlineLarge
+                        style = MaterialTheme.typography.headlineMedium
                     )
                     Spacer(modifier = Modifier.height(15.dp))
                 }
